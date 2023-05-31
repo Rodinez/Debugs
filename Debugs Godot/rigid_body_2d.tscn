@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1xeur2olx5cj"]
+
+[ext_resource type="Script" path="res://RigidBody2D.gd" id="1_wv7g2"]
+[ext_resource type="Texture2D" uid="uid://erdqij2p5uw" path="res://sprites/inimigos/inimigo - token.png" id="2_l3rjn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyfd6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l3rjn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow4g3"]
+size = Vector2(185, 144)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_wv7g2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vyfd6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, -19)
+shape = SubResource("RectangleShape2D_ow4g3")
+one_way_collision_margin = 0.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(8, -19)
+scale = Vector2(15.7, 7.2)
