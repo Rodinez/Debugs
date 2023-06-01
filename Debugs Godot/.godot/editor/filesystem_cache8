@@ -1,0 +1,32 @@
+2a60927148abd1d33b818b535e306557
+::res://::1685580921
+icon.svg::CompressedTexture2D::7814662677468465529::1685566948::1685566985::1::::<><>::
+::res://scenes/::1685580902
+Bullet.tscn::PackedScene::6600884009098727859::1685580902::0::1::::<><>::uid://d2r8lug5cywsd
+Enemy.tscn::PackedScene::8068629721366033681::1685580902::0::1::::<><>::res://scripts/enemy.gd<>uid://c2dnobe7sjs8g
+main.tscn::PackedScene::3414724205071919590::1685580902::0::1::::<><>::uid://c1bruic4pksal<>uid://do2vd2b8ug270<>uid://dm7rfgqrslmu8<>res://scripts/Bullet.gd
+Player.tscn::PackedScene::8198925896802803093::1685580902::0::1::::<><>::uid://040q2i5fa7it<>uid://bslkot7qeiip3<>uid://c0m4x32kkf6x1<>uid://cl2l6cgtoxnyc
+::res://scripts/::1685580818
+Bullet.gd::GDScript::-1::1685574247::0::1::::<>RigidBody2D<>::
+enemy.gd::GDScript::-1::1685580818::0::1::::<>RigidBody2D<>::
+Player.gd::GDScript::-1::1685577103::0::1::::<>Area2D<>::
+::res://sprites/::1685566948
+::res://sprites/arma/::1685566985
+arma - costa.png::CompressedTexture2D::4689385579005796215::1685566948::1685566985::1::::<><>::
+arma - dir.png::CompressedTexture2D::2402642214239681967::1685566948::1685566985::1::::<><>::
+arma - esq.png::CompressedTexture2D::5994872834315246287::1685566948::1685566985::1::::<><>::
+arma - frente.png::CompressedTexture2D::4653141944338264508::1685566948::1685566985::1::::<><>::
+breakpoint.png::CompressedTexture2D::9091479616721975007::1685566948::1685566985::1::::<><>::
+::res://sprites/inimigos/::1685566985
+inimigo - token.png::CompressedTexture2D::9295910452646142::1685566948::1685566985::1::::<><>::
+inimigo - unused.png::CompressedTexture2D::6674947661076819480::1685566948::1685566985::1::::<><>::
+::res://sprites/player/::1685566985
+armado - player - costa.png::CompressedTexture2D::1816135975198853939::1685566948::1685566985::1::::<><>::
+armado - player - dir.png::CompressedTexture2D::3673161243624705082::1685566948::1685566985::1::::<><>::
+armado - player - esq.png::CompressedTexture2D::6554138370267243116::1685566948::1685566985::1::::<><>::
+armado - player - frente .png::CompressedTexture2D::5601380208494083550::1685566948::1685566985::1::::<><>::
+referencia - player - costa.png::CompressedTexture2D::1429772720552081364::1685566948::1685566985::1::::<><>::
+referencia - player - dir.png::CompressedTexture2D::3017335610868827650::1685566948::1685566985::1::::<><>::
+referencia - player - esq.png::CompressedTexture2D::867272288359088195::1685566948::1685566985::1::::<><>::
+referencia - player - frente .png::CompressedTexture2D::3128060828523493820::1685566948::1685566985::1::::<><>::
+referencia - player.png::CompressedTexture2D::6138108645347932197::1685566948::1685566985::1::::<><>::
