@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1bruic4pksal"]
+
+[ext_resource type="Texture2D" uid="uid://d2r8lug5cywsd" path="res://sprites/arma/breakpoint.png" id="1_2co75"]
+
+[sub_resource type="GDScript" id="GDScript_2lywx"]
+script/source = "extends RigidBody2D
+
+
+func _ready():
+	pass
+
+
+func _process(delta):
+	pass
+	
+	
+
+
+func _on_area_2d_body_entered(body):
+	if \"enemy\" in body.name:
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfunw"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrng"]
+size = Vector2(6, 6)
+
+[node name="bullet" type="RigidBody2D"]
+gravity_scale = 0.0
+script = SubResource("GDScript_2lywx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2co75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dfunw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_1wrng")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
