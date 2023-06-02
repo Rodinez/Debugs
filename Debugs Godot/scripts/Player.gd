@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 @export var speed = 400 
 var screen_size
@@ -21,6 +21,8 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("fire") and can_fire: 
 		fire()
+	if Input.is_action_pressed("reset"): 
+		get_tree().reload_current_scene()
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -49,8 +51,8 @@ func _on_timer_timeout():
 func kill():
 	get_tree().reload_current_scene()
 	
-func _on_body_entered(body):
-	if "Enemy" in body.name:
+func _on_area_2d_body_entered(body): 
+	if "enemy" in body.name:
 		kill()
 	
 	

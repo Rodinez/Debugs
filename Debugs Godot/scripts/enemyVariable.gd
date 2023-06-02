@@ -11,5 +11,5 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if "bullet" in body.name:
+	if "bulletPlayer" in body.name:
 		queue_free()
