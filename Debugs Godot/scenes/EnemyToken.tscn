@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lgfxr8gexcy"]
+
+[ext_resource type="Texture2D" uid="uid://erdqij2p5uw" path="res://sprites/inimigos/inimigo - token.png" id="1_qb7lc"]
+[ext_resource type="Script" path="res://scripts/enemyToken.gd" id="2_ra8iy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwrc8"]
+size = Vector2(156, 71)
+
+[node name="enemy" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("2_ra8iy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(367, 168)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qb7lc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(370, 158.5)
+shape = SubResource("RectangleShape2D_mwrc8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(370, 158.5)
+shape = SubResource("RectangleShape2D_mwrc8")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

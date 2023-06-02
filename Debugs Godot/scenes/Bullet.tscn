@@ -1,35 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1bruic4pksal"]
 
 [ext_resource type="Texture2D" uid="uid://d2r8lug5cywsd" path="res://sprites/arma/breakpoint.png" id="1_2co75"]
-
-[sub_resource type="GDScript" id="GDScript_2lywx"]
-script/source = "extends RigidBody2D
-
-
-func _ready():
-	pass
-
-
-func _process(delta):
-	pass
-	
-	
-
-
-func _on_area_2d_body_entered(body):
-	if \"enemy\" in body.name:
-		queue_free()
-"
+[ext_resource type="Script" path="res://scripts/Bullet.gd" id="1_yj1l1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfunw"]
 size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrng"]
-size = Vector2(6, 6)
+size = Vector2(5, 5)
 
-[node name="bullet" type="RigidBody2D"]
+[node name="bulletPlayer" type="RigidBody2D"]
 gravity_scale = 0.0
-script = SubResource("GDScript_2lywx")
+script = ExtResource("1_yj1l1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2co75")
