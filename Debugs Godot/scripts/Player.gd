@@ -10,6 +10,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
+	Global.player_position = self.position
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -21,9 +22,7 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("fire") and can_fire: 
 		fire()
-	if Input.is_action_pressed("reset"): 
-		get_tree().reload_current_scene()
-
+		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
@@ -48,16 +47,6 @@ func fire():
 func _on_timer_timeout():
 	can_fire = true
 	
-func kill():
-	get_tree().reload_current_scene()
-	
 func _on_area_2d_body_entered(body): 
 	if "enemy" in body.name:
-		kill()
-	
-	
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
-	
+		get_tree().change_scene_to_file("res://scenes/kill.tscn")

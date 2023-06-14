@@ -4,9 +4,8 @@ func _ready():
 	pass 
 	
 func _process(delta):
-	var Player = get_parent().get_node("player")
-	position += (Player.position - position)/50
-	look_at(Player.position)
+	position += (Global.player_position - position)/50
+	look_at(Global.player_position)
 	move_and_collide(Vector2())
 
 
