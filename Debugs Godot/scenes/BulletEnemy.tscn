@@ -9,8 +9,7 @@ size = Vector2(12, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iw10r"]
 size = Vector2(12, 4)
 
-[node name="enemy" type="RigidBody2D"]
-gravity_scale = 0.0
+[node name="enemyBullet" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_1sch1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,4 +24,7 @@ texture = ExtResource("1_xpaku")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_iw10r")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

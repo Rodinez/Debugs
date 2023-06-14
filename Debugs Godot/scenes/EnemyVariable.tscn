@@ -9,7 +9,7 @@ size = Vector2(173, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgos7"]
 size = Vector2(173, 76)
 
-[node name="enemy" type="RigidBody2D"]
+[node name="enemyVariable" type="RigidBody2D" groups=["enemy"]]
 position = Vector2(200, 200)
 mass = 3.0
 gravity_scale = 0.0
@@ -20,6 +20,7 @@ position = Vector2(3.5, -26)
 shape = SubResource("RectangleShape2D_0goyt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -26)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_rt1gv")
 
