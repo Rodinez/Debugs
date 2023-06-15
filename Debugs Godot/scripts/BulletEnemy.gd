@@ -1,14 +1,12 @@
-extends Area2D
+extends RigidBody2D
 
 var speed = 400
-var direction = Vector2(0,0)
 
 func _ready():
 	pass 
 
 func _process(delta):
-	look_at(Global.player_position)
-	position = speed * delta * direction
+	pass
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.name:

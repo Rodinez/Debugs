@@ -37,11 +37,11 @@ func _process(delta):
 	
 func fire():
 	can_fire = false
-	var bullet_intance = bullet.instantiate()
-	bullet_intance.position = get_global_position()
-	bullet_intance.rotation_degrees = rotation_degrees
-	bullet_intance.apply_central_impulse(Vector2(bullet_speed,0).rotated(rotation))
-	get_tree().get_root().call_deferred("add_child",bullet_intance)
+	var bullet_instance = bullet.instantiate()
+	bullet_instance.position = Global.player_position
+	bullet_instance.rotation_degrees = rotation_degrees
+	bullet_instance.apply_central_impulse(Vector2(bullet_speed,0).rotated(rotation))
+	get_tree().get_root().call_deferred("add_child",bullet_instance)
 	$Timer.start()
 
 func _on_timer_timeout():
