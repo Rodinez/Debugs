@@ -9,7 +9,8 @@ size = Vector2(12, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iw10r"]
 size = Vector2(12, 4)
 
-[node name="enemyBullet" type="Area2D" groups=["enemy"]]
+[node name="enemyBullet" type="RigidBody2D" groups=["enemy"]]
+gravity_scale = 0.0
 script = ExtResource("1_1sch1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

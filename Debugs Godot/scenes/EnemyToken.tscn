@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwrc8"]
 size = Vector2(156, 71)
 
-[node name="enemyToken" type="CharacterBody2D" groups=["enemy"]]
+[node name="enemyToken" type="RigidBody2D" groups=["enemy"]]
 script = ExtResource("2_ra8iy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,7 +27,7 @@ shape = SubResource("RectangleShape2D_mwrc8")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(449, 153)
+position = Vector2(371, 154)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

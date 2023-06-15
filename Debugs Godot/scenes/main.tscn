@@ -217,3 +217,9 @@ position = Vector2(825, 187)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_u50fr")
 format = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.290196, 0.654902, 0.772549, 0.556863)
