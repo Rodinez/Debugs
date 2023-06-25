@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmfkiowjm5kml"]
+
+[ext_resource type="Script" path="res://scripts/shotgun.gd" id="1_gmfsc"]
+[ext_resource type="Texture2D" uid="uid://b48mjsn3xgc3f" path="res://sprites/player/shotgun - placeholder.png" id="1_pvhm4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82cmr"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktduq"]
+size = Vector2(64, 33)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_gmfsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pvhm4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_82cmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+shape = SubResource("RectangleShape2D_ktduq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

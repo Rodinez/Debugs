@@ -48,6 +48,7 @@ size = Vector2(37, 108)
 size = Vector2(37, 108)
 
 [node name="player" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_1qpqu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -65,8 +66,14 @@ shape = SubResource("RectangleShape2D_gjiy5")
 position = Vector2(-4.5, 1)
 shape = SubResource("RectangleShape2D_q4w0n")
 
+[node name="Camera2D" type="Camera2D" parent="Area2D"]
+zoom = Vector2(0.8, 0.8)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.33
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(14, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
