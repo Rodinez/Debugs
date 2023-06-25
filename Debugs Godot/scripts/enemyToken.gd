@@ -1,4 +1,5 @@
 extends RigidBody2D
+var life = 10
 
 var bullet_speed = 1000
 var bullet = preload("res://scenes/BulletEnemy.tscn")
@@ -15,10 +16,10 @@ func _process(delta):
 func fire():
 	can_fire = false
 	var bullet_instance = bullet.instantiate()
-	bullet_instance.position = $Marker2D.position
+	bullet_instance.position = $Marker2D.global_position
+	get_parent().add_child(bullet_instance)
 	bullet_instance.rotation_degrees = rotation_degrees
-	bullet_instance.apply_central_impulse(Vector2(bullet_speed,0).rotated(rotation))
-	get_tree().get_root().call_deferred("add_child",bullet_instance)
+	bullet_instance.apply_central_impulse((Global.player_position - global_position).normalized() * bullet_speed)
 	$Timer.start()
 
 func _on_timer_timeout():
@@ -26,4 +27,7 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	if "bulletPlayer" in body.name:
+		life -= Global.dmg
+	if life <= 0:
+		Global.alive -= 1
 		queue_free()
