@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d3o4hokfl01gr" path="res://scenes/player.tscn" id="1_1n0pn"]
 [ext_resource type="Texture2D" uid="uid://das41b004xwao" path="res://tilemaps/floor.png" id="4_u5spq"]
-[ext_resource type="PackedScene" path="res://scenes/portaS.tscn" id="7_prf8b"]
+[ext_resource type="PackedScene" uid="uid://0qgn7w5jan8t" path="res://scenes/portaS.tscn" id="7_prf8b"]
 
 [sub_resource type="GDScript" id="GDScript_1f3g1"]
 
