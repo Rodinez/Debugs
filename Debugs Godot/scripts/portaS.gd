@@ -1,10 +1,8 @@
 extends CharacterBody2D
 var mark
 
-func _process(delta):
+func _process(_delta):
 	randomize()
-
-
 
 func _on_area_2d_body_entered(body):
 	randomize()

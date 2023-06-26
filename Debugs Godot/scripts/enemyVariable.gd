@@ -1,15 +1,15 @@
 extends RigidBody2D
-var life = 15
+var life = 10
 
 func _ready():
 	if Global.index >= 9:
 		life = 30
 	elif Global.index >= 6:
-		life = 25
-	elif Global.index >= 3:
 		life = 20
+	elif Global.index >= 3:
+		life = 15
 	
-func _process(delta):
+func _process(_delta):
 	position += (Global.player_position - position)/50
 	look_at(Global.player_position)
 	move_and_collide(Vector2())

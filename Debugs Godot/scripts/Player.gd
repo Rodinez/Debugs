@@ -57,9 +57,9 @@ func fire(gun):
 		bullet_instance1.position = $Marker2D.global_position
 		bullet_instance2.position = $Marker2D.global_position
 		bullet_instance3.position = $Marker2D.global_position
-		bullet_instance.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed - Vector2(0,100))
-		bullet_instance1.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed + Vector2(100,100))
-		bullet_instance2.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed - Vector2(200,50))
+		bullet_instance.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed - Vector2(0,30))
+		bullet_instance1.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed + Vector2(100,500))
+		bullet_instance2.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed - Vector2(200,200))
 		bullet_instance3.apply_central_impulse((get_global_mouse_position() - global_position).normalized() * Global.bullet_speed)
 	$Timer.start()
 
@@ -80,9 +80,9 @@ func _on_area_2d_body_entered(body):
 		Global.bullet_speed = 2000
 	elif "sniper" in body.name:
 		Global.gun = "n"
-		Global.firetime = 1
 		Global.dmg = 10
 		Global.bullet_speed = 3000
+		Global.firetime = 1
 		$Timer.set_wait_time(Global.firetime)
 	elif "minigun" in body.name:
 		Global.gun = "m"

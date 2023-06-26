@@ -1,5 +1,5 @@
 extends RigidBody2D
-var life = 10
+var life = 7
 
 var bullet_speed = 1000
 var bullet = preload("res://scenes/BulletEnemy.tscn")
@@ -7,13 +7,13 @@ var can_fire = true
 
 func _ready():
 	if Global.index >= 9:
-		life = 24
+		life = 20
 	elif Global.index >= 6:
-		life = 18
-	elif Global.index >= 3:
 		life = 15
+	elif Global.index >= 3:
+		life = 10
 
-func _process(delta):
+func _process(_delta):
 	if can_fire:
 		fire()
 

@@ -5,5 +5,5 @@ func _ready():
 	Global.alive = 2
 
 
-func _process(delta):
+func _process(_delta):
 	pass
