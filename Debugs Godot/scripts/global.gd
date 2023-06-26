@@ -1,8 +1,12 @@
 extends Node
-@onready var player_position
+@onready var player_position 
 var dmg = 2
-var alive
+var alive = 0
 var index = 0
+var gun = "p"
+var firetime = 0.33
+var upgrades = [0,0,0,0]
+var bullet_speed = 1500
 
 func _ready():
 	pass # Replace with function body.

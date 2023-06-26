@@ -12,6 +12,11 @@ func _process(delta):
 
 
 func _on_restart_pressed():
+	Global.index = 0
+	Global.dmg = 2
+	Global.gun = "p"
+	Global.firetime = 0.33
+	Global.alive = 0
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 

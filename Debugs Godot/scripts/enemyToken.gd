@@ -6,10 +6,14 @@ var bullet = preload("res://scenes/BulletEnemy.tscn")
 var can_fire = true
 
 func _ready():
-	pass
+	if Global.index >= 9:
+		life = 24
+	elif Global.index >= 6:
+		life = 18
+	elif Global.index >= 3:
+		life = 15
 
 func _process(delta):
-	look_at(Global.player_position)
 	if can_fire:
 		fire()
 

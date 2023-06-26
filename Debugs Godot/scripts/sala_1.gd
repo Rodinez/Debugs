@@ -1,9 +1,7 @@
 extends Node2D
 
-
 func _ready():
-	pass 
-
+	Global.alive = 3
 
 func _process(delta):
 	pass
