@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://boweakekofe5s"]
 
-[ext_resource type="PackedScene" uid="uid://caqpaow67x5tf" path="res://scenes/player.tscn" id="1_1n0pn"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_2pjjj"]
+[ext_resource type="PackedScene" uid="uid://d3o4hokfl01gr" path="res://scenes/player.tscn" id="1_1n0pn"]
 [ext_resource type="Texture2D" uid="uid://das41b004xwao" path="res://tilemaps/floor.png" id="4_u5spq"]
-[ext_resource type="PackedScene" uid="uid://0qgn7w5jan8t" path="res://scenes/portaS.tscn" id="7_prf8b"]
+[ext_resource type="PackedScene" path="res://scenes/portaS.tscn" id="7_prf8b"]
+
+[sub_resource type="GDScript" id="GDScript_1f3g1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vo0q4"]
 texture = ExtResource("4_u5spq")
@@ -18,13 +19,14 @@ tile_size = Vector2i(32, 32)
 sources/3 = SubResource("TileSetAtlasSource_vo0q4")
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_2pjjj")
+script = SubResource("GDScript_1f3g1")
 
 [node name="player" parent="." instance=ExtResource("1_1n0pn")]
 top_level = true
-position = Vector2(965, 580)
+position = Vector2(620, 561)
 rotation = 0.0122815
-inertia = 0.08
+can_sleep = false
+freeze_mode = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_m8lq1")

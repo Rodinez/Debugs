@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm7rfgqrslmu8"]
+[gd_scene load_steps=5 format=3 uid="uid://cmmha3a2v24fh"]
 
 [ext_resource type="Script" path="res://scripts/enemyVariable.gd" id="1_k2k1w"]
 [ext_resource type="Texture2D" uid="uid://c2dnobe7sjs8g" path="res://sprites/inimigos/inimigo - unused.png" id="2_rt1gv"]
@@ -11,7 +11,7 @@ size = Vector2(173, 76)
 
 [node name="enemyVariable" type="RigidBody2D" groups=["enemy"]]
 position = Vector2(200, 200)
-mass = 3.0
+mass = 1000.0
 gravity_scale = 0.0
 script = ExtResource("1_k2k1w")
 

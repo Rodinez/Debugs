@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://caqpaow67x5tf"]
+[gd_scene load_steps=9 format=3 uid="uid://d3o4hokfl01gr"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_1qpqu"]
 [ext_resource type="Texture2D" uid="uid://040q2i5fa7it" path="res://sprites/player/armado - player - costa.png" id="2_un12i"]

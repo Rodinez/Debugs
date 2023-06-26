@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0lgfxr8gexcy"]
+[gd_scene load_steps=4 format=3 uid="uid://dnu48lumhi8ok"]
 
 [ext_resource type="Texture2D" uid="uid://erdqij2p5uw" path="res://sprites/inimigos/inimigo - token.png" id="1_qb7lc"]
 [ext_resource type="Script" path="res://scripts/enemyToken.gd" id="2_ra8iy"]
@@ -7,6 +7,7 @@
 size = Vector2(156, 71)
 
 [node name="enemyToken" type="RigidBody2D" groups=["enemy"]]
+mass = 1000.0
 gravity_scale = 0.0
 can_sleep = false
 script = ExtResource("2_ra8iy")
@@ -29,7 +30,7 @@ shape = SubResource("RectangleShape2D_mwrc8")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(448, 151)
+position = Vector2(291, 155)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,19 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1bruic4pksal"]
+[gd_scene load_steps=5 format=3 uid="uid://dd0mxbb7jla2e"]
 
-[ext_resource type="Texture2D" uid="uid://d2r8lug5cywsd" path="res://sprites/arma/breakpoint.png" id="1_2co75"]
+[ext_resource type="Texture2D" uid="uid://d2r8lug5cywsd" path="res://sprites/armas/breakpoint.png" id="1_2co75"]
 [ext_resource type="Script" path="res://scripts/Bullet.gd" id="1_yj1l1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfunw"]
-size = Vector2(4, 4)
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrng"]
-size = Vector2(5, 5)
+size = Vector2(15, 15)
 
 [node name="bulletPlayer" type="RigidBody2D"]
+mass = 0.01
 gravity_scale = 0.0
+can_sleep = false
 script = ExtResource("1_yj1l1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("1_2co75")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,6 +30,8 @@ shape = SubResource("RectangleShape2D_1wrng")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.6, 0.6)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
