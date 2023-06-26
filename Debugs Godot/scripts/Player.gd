@@ -22,6 +22,14 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("fire") and can_fire: 
 		fire(Global.gun)
+	if Input.is_action_pressed("change_gun"): 
+		var aux = [Global.gun, Global.dmg, Global.firetime, Global.bullet_speed]
+		Global.gun = Global.change_gun[0]
+		Global.firetime = Global.change_gun[1]
+		$Timer.set_wait_time(Global.firetime)
+		Global.dmg = Global.change_gun[2]
+		Global.bullet_speed = Global.change_gun[3]
+		Global.change_gun = aux
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -98,6 +106,11 @@ func _on_area_2d_body_entered(body):
 			"s": Global.dmg = 4
 			"m": Global.dmg = 3
 			"n": Global.dmg = 15
+		match  Global.change_gun[0]:
+			"p": Global.change_gun[2] = 3
+			"s": Global.change_gun[2] = 4
+			"m": Global.change_gun[2] = 3
+			"n": Global.change_gun[2] = 15
 	if "qsort" in body.name or Global.upgrades[2] == 1:
 		Global.upgrades[2] = 1
 		match Global.gun:
@@ -105,6 +118,11 @@ func _on_area_2d_body_entered(body):
 			"s": Global.firetime = 0.5
 			"m": Global.firetime = 0.15
 			"n": Global.firetime = 0.75
+		match Global.change_gun[0]:
+			"p": Global.change_gun[1] = 0.25
+			"s": Global.change_gun[1] = 0.5
+			"m": Global.change_gun[1] = 0.15
+			"n": Global.change_gun[1] = 0.75
 		$Timer.set_wait_time(Global.firetime)
 	if "debbuger" in body.name:
 		Global.upgrades[3] = 1
