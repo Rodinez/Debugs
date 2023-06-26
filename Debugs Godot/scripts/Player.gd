@@ -22,14 +22,22 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("fire") and can_fire: 
 		fire(Global.gun)
-	if Input.is_action_pressed("change_gun"): 
-		var aux = [Global.gun, Global.dmg, Global.firetime, Global.bullet_speed]
+	if Input.is_action_just_pressed("change_gun"): 
+		var aux = [Global.gun, Global.firetime, Global.dmg, Global.bullet_speed]
+		print(aux)
 		Global.gun = Global.change_gun[0]
 		Global.firetime = Global.change_gun[1]
 		$Timer.set_wait_time(Global.firetime)
 		Global.dmg = Global.change_gun[2]
 		Global.bullet_speed = Global.change_gun[3]
-		Global.change_gun = aux
+		print(Global.bullet_speed)
+		print(Global.dmg)
+		print(Global.firetime)
+		print(Global.gun)
+		Global.change_gun[0] = aux[0]
+		Global.change_gun[1] = aux[1]
+		Global.change_gun[2] = aux[2]
+		Global.change_gun[3] = aux[3]
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
