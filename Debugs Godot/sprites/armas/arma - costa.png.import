@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7katkukornoe"
-path="res://.godot/imported/arma - frente.png-1ffa1b40ed3a6fe634404441def6a29d.ctex"
+uid="uid://b72tq3vtj0vbj"
+path="res://.godot/imported/arma - costa.png-282fd765d84d4785652a635289db51b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/arma/arma - frente.png"
-dest_files=["res://.godot/imported/arma - frente.png-1ffa1b40ed3a6fe634404441def6a29d.ctex"]
+source_file="res://sprites/armas/arma - costa.png"
+dest_files=["res://.godot/imported/arma - costa.png-282fd765d84d4785652a635289db51b3.ctex"]
 
 [params]
 

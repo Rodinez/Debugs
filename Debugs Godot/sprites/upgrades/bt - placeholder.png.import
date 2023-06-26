@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b72tq3vtj0vbj"
-path="res://.godot/imported/arma - costa.png-ad3f093df659b3d743999e4f2fa5b7a8.ctex"
+uid="uid://djm7alpmrphyl"
+path="res://.godot/imported/bt - placeholder.png-0faebe744eff1d9dfa9e90f43d3a1fd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/arma/arma - costa.png"
-dest_files=["res://.godot/imported/arma - costa.png-ad3f093df659b3d743999e4f2fa5b7a8.ctex"]
+source_file="res://sprites/upgrades/bt - placeholder.png"
+dest_files=["res://.godot/imported/bt - placeholder.png-0faebe744eff1d9dfa9e90f43d3a1fd0.ctex"]
 
 [params]
 
