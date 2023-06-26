@@ -24,16 +24,11 @@ func _process(delta):
 		fire(Global.gun)
 	if Input.is_action_just_pressed("change_gun"): 
 		var aux = [Global.gun, Global.firetime, Global.dmg, Global.bullet_speed]
-		print(aux)
 		Global.gun = Global.change_gun[0]
 		Global.firetime = Global.change_gun[1]
 		$Timer.set_wait_time(Global.firetime)
 		Global.dmg = Global.change_gun[2]
 		Global.bullet_speed = Global.change_gun[3]
-		print(Global.bullet_speed)
-		print(Global.dmg)
-		print(Global.firetime)
-		print(Global.gun)
 		Global.change_gun[0] = aux[0]
 		Global.change_gun[1] = aux[1]
 		Global.change_gun[2] = aux[2]
