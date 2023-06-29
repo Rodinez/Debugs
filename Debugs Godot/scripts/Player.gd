@@ -85,7 +85,7 @@ func _on_area_2d_body_entered(body):
 			get_tree().change_scene_to_file("res://scenes/kill.tscn")
 	if "shotgun" in body.name:
 		Global.gun = "s"
-		Global.firetime = 0.65
+		Global.firetime = 0.75
 		$Timer.set_wait_time(Global.firetime)
 		Global.dmg = 3
 		Global.bullet_speed = 2000
@@ -118,9 +118,9 @@ func _on_area_2d_body_entered(body):
 		Global.upgrades[2] = 1
 		match Global.gun:
 			"p": Global.firetime = 0.25
-			"s": Global.firetime = 0.5
+			"s": Global.firetime = 0.6
 			"m": Global.firetime = 0.15
-			"n": Global.firetime = 0.75
+			"n": Global.firetime = 0.8
 		match Global.change_gun[0]:
 			"p": Global.change_gun[1] = 0.25
 			"s": Global.change_gun[1] = 0.5
