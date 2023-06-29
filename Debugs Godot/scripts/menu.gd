@@ -18,6 +18,7 @@ func _on_start_pressed():
 	Global.bullet_speed = 1500
 	Global.firetime = 0.33
 	Global.alive = 0
+	Global.change_gun = ["p", 0.33, 2, 1500]
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 

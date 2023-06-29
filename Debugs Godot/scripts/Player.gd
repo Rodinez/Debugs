@@ -123,9 +123,9 @@ func _on_area_2d_body_entered(body):
 			"n": Global.firetime = 0.8
 		match Global.change_gun[0]:
 			"p": Global.change_gun[1] = 0.25
-			"s": Global.change_gun[1] = 0.5
+			"s": Global.change_gun[1] = 0.6
 			"m": Global.change_gun[1] = 0.15
-			"n": Global.change_gun[1] = 0.75
+			"n": Global.change_gun[1] = 0.8
 		$Timer.set_wait_time(Global.firetime)
 	if "debbuger" in body.name:
 		Global.upgrades[3] = 1
